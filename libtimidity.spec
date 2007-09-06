@@ -2,7 +2,7 @@ Summary:	MIDI to WAVE converted library
 Summary(pl.UTF-8):	Biblioteka konwertująca MIDI do WAVE
 Name:		libtimidity
 Version:	0.1.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libtimidity/%{name}-%{version}.tar.bz2
