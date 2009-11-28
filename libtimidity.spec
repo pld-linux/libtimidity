@@ -8,6 +8,8 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/libtimidity/%{name}-%{version}.tar.bz2
 # Source0-md5:	72173a1084df0c42f9daa7b4568ebd18
 URL:		http://libtimidity.sourceforge.net/
+# configure is broken and tries to test whether g++ will be used to compile C
+BuildRequires:	gcc-c++
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,7 +23,7 @@ from MIDI song.
 
 %description -l pl.UTF-8
 Ta biblioteka jest oparta na kodzie dekodera TiMidity z biblioteki
-SDL_sound. Celem jest powstania było uniknięcie niepotrzebnych
+SDL_sound. Celem jej powstania było uniknięcie niepotrzebnych
 zależności. SDL_sound wymaga SDL-a i kilku innych bibliotek, które
 nie są potrzebne do przetwarzania plików MIDI. Ponadto libtimidity
 udostępnia bardziej odpowiednie API do pracy z utworami MIDI, pozwala
