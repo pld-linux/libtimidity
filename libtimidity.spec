@@ -76,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS CHANGES ChangeLog NEWS README* TODO
-%attr(755,root,root) %ghost %{_libdir}/libtimidity-*.so.?
+%attr(755,root,root) %ghost %{_libdir}/libtimidity-*.so.0
 %attr(755,root,root) %{_libdir}/libtimidity-*.so.*.*.*
 
 %files devel
