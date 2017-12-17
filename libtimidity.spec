@@ -1,15 +1,15 @@
 Summary:	MIDI to WAVE converted library
 Summary(pl.UTF-8):	Biblioteka konwertująca MIDI do WAVE
 Name:		libtimidity
-Version:	0.1.0
-Release:	4
-License:	LGPL
+Version:	0.2.5
+Release:	1
+License:	LGPL v2.1+ or GPL v2+ or Artistic
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/libtimidity/%{name}-%{version}.tar.bz2
-# Source0-md5:	72173a1084df0c42f9daa7b4568ebd18
+Source0:	http://downloads.sourceforge.net/libtimidity/%{name}-%{version}.tar.gz
+# Source0-md5:	1610ff6623a91340c31ce668abfd92ab
 URL:		http://libtimidity.sourceforge.net/
-# configure is broken and tries to test whether g++ will be used to compile C
-BuildRequires:	gcc-c++
+# for noinst program
+#BuildRequires:	libao-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -75,9 +75,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CHANGES ChangeLog NEWS README* TODO
-%attr(755,root,root) %ghost %{_libdir}/libtimidity-*.so.0
-%attr(755,root,root) %{_libdir}/libtimidity-*.so.*.*.*
+%doc AUTHORS CHANGES COPYING README* TODO
+%attr(755,root,root) %{_libdir}/libtimidity.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libtimidity.so.2
 
 %files devel
 %defattr(644,root,root,755)
