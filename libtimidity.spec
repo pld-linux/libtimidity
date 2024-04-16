@@ -1,13 +1,13 @@
 Summary:	MIDI to WAVE converted library
 Summary(pl.UTF-8):	Biblioteka konwertująca MIDI do WAVE
 Name:		libtimidity
-Version:	0.2.6
+Version:	0.2.7
 Release:	1
 License:	LGPL v2.1+ or GPL v2+ or Artistic
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/libtimidity/%{name}-%{version}.tar.gz
-# Source0-md5:	ae4264b776c55ad0aee7fb76702f1b2d
-URL:		http://libtimidity.sourceforge.net/
+Source0:	https://downloads.sourceforge.net/libtimidity/%{name}-%{version}.tar.gz
+# Source0-md5:	dec3ce8839c73e251f8bfbf36fa878fd
+URL:		https://libtimidity.sourceforge.net/
 # for noinst program
 #BuildRequires:	libao-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -67,6 +67,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libtimidity.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -82,7 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libtimidity.so
-%{_libdir}/libtimidity.la
 %{_includedir}/timidity.h
 %{_pkgconfigdir}/libtimidity.pc
 
